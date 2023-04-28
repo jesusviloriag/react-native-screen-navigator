@@ -1,31 +1,53 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-screen-navigator';
+import Navigator from 'react-native-screen-navigator';
+import Home from './screens/Home';
+import Login from './screens/Login';
+import Profile from './screens/Profile';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
 
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <Navigator
+      screens={[{
+        component: Login,
+        name: 'Login',
+        title: 'Login',
+        options: {
+          hideTopTab: true   
+        }
+      },
+      {
+        component: Home,
+        name: 'Home',
+        title: 'Home Screen',
+        options: {
+          topTabColor: '#fff'
+        }
+      },
+      {
+        component: Profile,
+        name: 'Profile',
+        title: 'Profile screenie, my dude',
+        options: {
+          topTabColor: '#000'
+        }
+      }]}
+      initialScreen={'Login'}
+      bottomTab={{
+        items:[{
+          title: 'Login',
+          icon: require('./assets/user.png'),
+          screen: 'Login'
+        },{
+          title: 'Home',
+          icon: require('./assets/home.png'),
+          screen: 'Home'
+        },{
+          title: 'Profile',
+          icon: require('./assets/setting.png'),
+          screen: 'Profile'
+        }]}}
+    ></Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
