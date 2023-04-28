@@ -167,7 +167,7 @@ class Navigator extends React.Component<NavProps> {
     if(!Navigator.instance.state.hideBackButton) {
       return (
         <TouchableOpacity onPress={() => Navigator.pop()} style={{padding: 15}}>
-          <Image style={{width: 15, height: 15, tintColor: !Navigator.instance.state.darkContent ? '#fff' : '#000'}} source={require('./assets/back.png')}></Image>
+          <Image style={{width: 15, height: 15, tintColor: !Navigator.instance.state.darkContent ? '#fff' : '#000'}} source={require('../assets/back.png')}></Image>
         </TouchableOpacity>
       )
     } else {
