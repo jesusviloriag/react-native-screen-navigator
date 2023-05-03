@@ -14,7 +14,7 @@ export default function App() {
         name: 'Login',
         title: 'Login',
         options: {
-          hideTopTab: true   
+          hideTopTab: true
         }
       },
       {
@@ -22,7 +22,8 @@ export default function App() {
         name: 'Home',
         title: 'Home Screen',
         options: {
-          topTabColor: '#fff'
+          topTabColor: '#fff',
+          hideBackButton: true
         }
       },
       {
@@ -30,7 +31,8 @@ export default function App() {
         name: 'Profile',
         title: 'Profile screenie, my dude',
         options: {
-          topTabColor: '#000'
+          topTabColor: '#000',
+          hideBottomTab: true
         }
       }]}
       initialScreen={'Login'}

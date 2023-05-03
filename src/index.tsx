@@ -98,6 +98,7 @@ class Navigator extends React.Component<NavProps> {
     let currentScreen = Navigator.instance.state.currentScreen;
 
     let hideTopTab = currentScreen.options?.hideTopTab;
+    let hideBottomTab = currentScreen.options?.hideBottomTab;
     let hideBackButton = currentScreen.options?.hideBackButton;
     let topTabColor = currentScreen.options?.topTabColor;
     let darkContent = true;
@@ -111,6 +112,7 @@ class Navigator extends React.Component<NavProps> {
 
     Navigator.instance.setState({
       hideTopTab: hideTopTab,
+      hideBottomTab: hideBottomTab,
       hideBackButton: hideBackButton,
       topTabColor: topTabColor,
       darkContent: darkContent

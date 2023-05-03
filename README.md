@@ -34,7 +34,8 @@ function App(): JSX.Element {
         name: 'Home',
         title: 'Home Screen',
         options: {
-          topTabColor: '#fff'
+          topTabColor: '#fff',
+          hideBackButton: true
         }
       },
       {
@@ -42,7 +43,8 @@ function App(): JSX.Element {
         name: 'Profile',
         title: 'Profile screenie, my dude',
         options: {
-          topTabColor: '#000'
+          topTabColor: '#000',
+          hideBottomTab: true
         }
       }]}
       initialScreen={'Login'}
@@ -65,7 +67,7 @@ function App(): JSX.Element {
 }
 ```
 Modal Window:
-```
+```js
 Navigator.openModal({
   title: "Modal title",  //title of the window
   text: "This is a test text, it can be very long, but try to be brief :)", //text inside of the window
